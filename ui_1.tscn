@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://by2nexvrd42jr"]
+
+[sub_resource type="Gradient" id="Gradient_8xkge"]
+offsets = PackedFloat32Array(0.441558, 0.655844)
+colors = PackedColorArray(0, 0.580392, 0.223529, 1, 0, 0.580392, 1, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0ocmy"]
+gradient = SubResource("Gradient_8xkge")
+fill_from = Vector2(0.522936, 0.981651)
+fill_to = Vector2(0.522936, 0.555046)
+
+[node name="ui_1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_0ocmy")
