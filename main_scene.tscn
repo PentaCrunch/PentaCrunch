@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bx0no8s34pqqc" path="res://boss.tscn" id="1_3jtbm"]
 [ext_resource type="PackedScene" uid="uid://c83xt0ctyo2vf" path="res://truck.tscn" id="2_bd7g8"]
-[ext_resource type="PackedScene" uid="uid://bgddm71pfwbis" path="res://ui_1.tscn" id="3_w4b3k"]
+[ext_resource type="PackedScene" uid="uid://by2nexvrd42jr" path="res://ui_1.tscn" id="3_w4b3k"]
 
 [node name="MainScene" type="Node2D"]
 
