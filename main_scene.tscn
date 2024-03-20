@@ -4,11 +4,8 @@
 [ext_resource type="Script" path="res://main_scene.gd" id="1_u7mxa"]
 [ext_resource type="PackedScene" uid="uid://c83xt0ctyo2vf" path="res://truck.tscn" id="2_bd7g8"]
 [ext_resource type="PackedScene" uid="uid://by2nexvrd42jr" path="res://ui_1.tscn" id="3_w4b3k"]
-<<<<<<< HEAD
-=======
 [ext_resource type="Script" path="res://ArrowMechanics.gd" id="6_fpwrq"]
 [ext_resource type="PackedScene" uid="uid://qlepyyv8q0bw" path="res://accuracy_bar.tscn" id="6_shxs8"]
->>>>>>> 1c9918969c09720ab1255be64cd40576717d4d43
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_u7mxa")
