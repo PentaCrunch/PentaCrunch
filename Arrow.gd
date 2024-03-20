@@ -28,8 +28,12 @@ func _ready():
 func set_animation(name):
 	if name == "topDown1":
 		$AnimationPlayer.play("topDown1")
-	elif name == "downTop1":
-		$AnimationPlayer.play("downTop1")
+	elif name == "topDown2":
+		$AnimationPlayer.play("topDown2")
+	elif name == "topDown3":
+		$AnimationPlayer.play("topDown3")
+	elif name == "topDown4":
+		$AnimationPlayer.play("topDown4")
 
 # Generates random value from 4 different arrows
 func generate_random_arrows():
@@ -41,15 +45,15 @@ func generate_random_arrows():
 # Checks how accurate user input was
 func check_position_color():
 	var area_color = ""
-	if position.y >= 416 and position.y < 472:
+	if position.y >= 768 and position.y < 800:
 		area_color = "red"
-	elif position.y >= 472 and position.y < 520:
+	elif position.y >= 800 and position.y < 832:
 		area_color = "yellow"
-	elif position.y >= 520 and position.y < 568:
+	elif position.y >= 832 and position.y < 864:
 		area_color = "green"
-	elif position.y >= 568 and position.y < 616:
+	elif position.y >= 864 and position.y < 896:
 		area_color = "yellow"
-	elif position.y >= 616 and position.y <= 664:
+	elif position.y >= 896 and position.y <= 928:
 		area_color = "red"
 		
 	return area_color
@@ -62,7 +66,7 @@ func _process(delta):
 func _input(event):
 	if event is InputEventKey and event.pressed:
 		# Check that arrow is on "goal line" and that it's not already hit
-		if position.y >= 416 and position.y <= 664 and not hit:
+		if position.y >= 768 and position.y <= 928 and not hit:
 			var area = check_position_color()
 			# Check if the pressed key matches the current arrow
 			if key_to_arrow.has(event.keycode) and current_arrow_name == key_to_arrow[event.keycode]:

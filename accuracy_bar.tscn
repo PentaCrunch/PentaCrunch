@@ -1,36 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://qlepyyv8q0bw"]
+[gd_scene load_steps=4 format=3 uid="uid://qlepyyv8q0bw"]
 
 [ext_resource type="Script" path="res://accuracy_bar.gd" id="1_jt0on"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygaph"]
-size = Vector2(506.625, 32.5)
-
 [sub_resource type="Gradient" id="Gradient_t8bfq"]
-offsets = PackedFloat32Array(0.166667, 0.388889, 0.5, 0.611111, 0.833333, 0.888889)
-colors = PackedColorArray(0.823529, 0, 0, 0.647059, 0.596078, 0.890196, 0, 0.647059, 0, 0.454902, 0.0666667, 0.647059, 0.596078, 0.890196, 0, 0.647059, 0.823529, 0, 0, 0.784314, 0.823529, 0, 0, 0.647059)
+offsets = PackedFloat32Array(0.111111, 0.5, 0.888889)
+colors = PackedColorArray(0.34902, 0.345098, 1, 0.705882, 0.0509804, 0, 0, 1, 0.34902, 0.345098, 1, 0.705882)
 metadata/_snap_enabled = true
 metadata/_snap_count = 18
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8qsv4"]
 gradient = SubResource("Gradient_t8bfq")
+fill_from = Vector2(0.489316, 1)
+fill_to = Vector2(0.487179, 0)
 
 [node name="AccuracyBar" type="Area2D"]
 script = ExtResource("1_jt0on")
 
 [node name="AccuracyBar" type="Sprite2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.25)
-shape = SubResource("RectangleShape2D_ygaph")
-
-[node name="TextureRect" type="TextureRect" parent="CollisionShape2D"]
+[node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -253.0
-offset_top = -16.0
-offset_right = 256.0
-offset_bottom = 16.0
+offset_right = 509.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("GradientTexture2D_8qsv4")

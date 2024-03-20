@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dejjo0fpse4f8"]
+[gd_scene load_steps=12 format=3 uid="uid://dejjo0fpse4f8"]
 
 [ext_resource type="Texture2D" uid="uid://bs8m8xn0fctsr" path="res://assets/arrow-right.png" id="1_hkyoq"]
 [ext_resource type="Script" path="res://Arrow.gd" id="2_xl2mk"]
@@ -66,12 +66,63 @@ tracks/0/keys = {
 "values": [Vector2(144, -71), Vector2(144, 1155)]
 }
 
+[sub_resource type="Animation" id="Animation_ufn3m"]
+resource_name = "topDown2"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(370, -50), Vector2(370, 1135)]
+}
+
+[sub_resource type="Animation" id="Animation_gmau5"]
+resource_name = "topDown3"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(596, -50), Vector2(596, 1135)]
+}
+
+[sub_resource type="Animation" id="Animation_4p517"]
+resource_name = "topDown€"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(822, -50), Vector2(822, 1135)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rpdfd"]
 _data = {
 "RESET": SubResource("Animation_lgyje"),
 "downTop1": SubResource("Animation_sgugt"),
 "left_to_right": SubResource("Animation_rjdmx"),
-"topDown1": SubResource("Animation_dm1r0")
+"topDown1": SubResource("Animation_dm1r0"),
+"topDown2": SubResource("Animation_ufn3m"),
+"topDown3": SubResource("Animation_gmau5"),
+"topDown4": SubResource("Animation_4p517")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grwp5"]
@@ -79,7 +130,7 @@ size = Vector2(274.313, 108.75)
 
 [node name="Arrow" type="Sprite2D"]
 position = Vector2(-92, 2.08165e-12)
-scale = Vector2(0.4, 0.4)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_hkyoq")
 script = ExtResource("2_xl2mk")
 
