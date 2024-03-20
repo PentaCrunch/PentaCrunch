@@ -53,6 +53,7 @@ func check_position_color():
 		area_color = "red"
 		
 	return area_color
+	
 
 func _process(delta):
 	pass
