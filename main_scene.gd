@@ -28,6 +28,8 @@ var truck_texture6 = preload("res://assets/truck-6.png")
 @onready var feedback_label = $FeedbackLabel
 @onready var percent_label = $PercentLabel
 
+@onready var track = $Track
+
 func _ready():
 	# set label empty 
 	feedback_label.text = ""
@@ -36,6 +38,11 @@ func _ready():
 	var arrow_child = get_node("ArrowMechanics")
 	call_arrowsTopDown1(arrow_child)
 	call_arrowsDownTop1(arrow_child)
+	play_track()
+	
+func play_track():
+	await get_tree().create_timer(3).timeout
+	track.play()
 
 func call_arrowsTopDown1(arrow_child):
 	if arrow_child:
