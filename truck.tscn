@@ -1,13 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://c83xt0ctyo2vf"]
 
-[ext_resource type="Texture2D" uid="uid://dfe7fv2i8hla6" path="res://assets/truck-placeholder.png" id="1_bmee6"]
 [ext_resource type="Script" path="res://truck.gd" id="1_yq0q3"]
+[ext_resource type="Texture2D" uid="uid://ddh585wocg4y5" path="res://assets/truck-empty.png" id="2_g1t2n"]
 
 [node name="Truck" type="Area2D"]
 script = ExtResource("1_yq0q3")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-
 [node name="Truck" type="Sprite2D" parent="."]
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_bmee6")
+texture = ExtResource("2_g1t2n")
