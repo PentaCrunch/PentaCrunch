@@ -84,4 +84,3 @@ func _input(event):
 				elif area == "red":
 					$"/root/MainScene".print_feedback("Poor")
 					$"/root/MainScene".player_score(1)
-

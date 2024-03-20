@@ -165,4 +165,3 @@ func increase_box_amount():
 		truck_sprite.texture = truck_texture2
 	elif percent > 14:
 		truck_sprite.texture = truck_texture1
-
