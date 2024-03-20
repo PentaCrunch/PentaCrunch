@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://ceulvgal4xivv"]
+[gd_scene load_steps=7 format=3 uid="uid://ceulvgal4xivv"]
 
 [ext_resource type="PackedScene" uid="uid://bx0no8s34pqqc" path="res://boss.tscn" id="1_3jtbm"]
+[ext_resource type="Script" path="res://main_scene.gd" id="1_u7mxa"]
 [ext_resource type="PackedScene" uid="uid://c83xt0ctyo2vf" path="res://truck.tscn" id="2_bd7g8"]
-[ext_resource type="PackedScene" uid="uid://bgddm71pfwbis" path="res://ui_1.tscn" id="3_w4b3k"]
+[ext_resource type="PackedScene" uid="uid://by2nexvrd42jr" path="res://ui_1.tscn" id="3_w4b3k"]
+[ext_resource type="Script" path="res://ArrowMechanics.gd" id="6_fpwrq"]
+[ext_resource type="PackedScene" uid="uid://qlepyyv8q0bw" path="res://accuracy_bar.tscn" id="6_shxs8"]
 
 [node name="MainScene" type="Node2D"]
+script = ExtResource("1_u7mxa")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -16,3 +20,27 @@ position = Vector2(1553, 607)
 
 [node name="Boss" parent="." instance=ExtResource("1_3jtbm")]
 position = Vector2(1217, 705)
+
+[node name="AccuracyBar" parent="." instance=ExtResource("6_shxs8")]
+position = Vector2(336, 540)
+rotation = 1.5708
+scale = Vector2(0.5, 20)
+
+[node name="ArrowMechanics" type="Node2D" parent="."]
+script = ExtResource("6_fpwrq")
+
+[node name="FeedbackLabel" type="Label" parent="."]
+offset_left = 768.0
+offset_top = 504.0
+offset_right = 952.0
+offset_bottom = 568.0
+theme_override_font_sizes/font_size = 45
+text = "Perfect"
+
+[node name="PercentLabel" type="Label" parent="."]
+offset_left = 856.0
+offset_top = 192.0
+offset_right = 1201.0
+offset_bottom = 296.0
+theme_override_font_sizes/font_size = 50
+text = "Accuracy 93 %"
