@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uhhuwcovpk61"
-path="res://.godot/imported/boss-sprite-placeholder.png-01f10c479fb7e305edc5c563a42f3ce3.ctex"
+uid="uid://jyq48ub4hrry"
+path="res://.godot/imported/boss-stressed-middle.png-7e8d84dec3997ff29123fc93db68217e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/boss-sprite-placeholder.png"
-dest_files=["res://.godot/imported/boss-sprite-placeholder.png-01f10c479fb7e305edc5c563a42f3ce3.ctex"]
+source_file="res://assets/boss/boss-stressed-middle.png"
+dest_files=["res://.godot/imported/boss-stressed-middle.png-7e8d84dec3997ff29123fc93db68217e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6nfvwpyg3oqm"
-path="res://.godot/imported/truck-2.png-7ade062d10e81ee9fde57e6fc26e5a13.ctex"
+uid="uid://6qf8ax0tcnqs"
+path="res://.godot/imported/boss-stressed-right.png-6ea562dc8124a304d111251867e91dae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/truck-2.png"
-dest_files=["res://.godot/imported/truck-2.png-7ade062d10e81ee9fde57e6fc26e5a13.ctex"]
+source_file="res://assets/boss/boss-stressed-right.png"
+dest_files=["res://.godot/imported/boss-stressed-right.png-6ea562dc8124a304d111251867e91dae.ctex"]
 
 [params]
 

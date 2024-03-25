@@ -8,6 +8,27 @@ var arrow_list = [
 	{"path": "res://assets/arrow-down.png", "name": "arrow_down"}
 ]
 
+var b_arrow_list = [
+	{"path": "res://assets/B_arrows/arrow-right-2.png", "name": "arrow_right"},
+	{"path": "res://assets/B_arrows/arrow-left-2.png", "name": "arrow_left"},
+	{"path": "res://assets/B_arrows/arrow-up-2.png", "name": "arrow_up"},
+	{"path": "res://assets/B_arrows/arrow-down-2.png", "name": "arrow_down"}
+]
+
+var l_arrow_list = [
+	{"path": "res://assets/L_arrows/arrow-right-3.png", "name": "arrow_right"},
+	{"path": "res://assets/L_arrows/arrow-left-3.png", "name": "arrow_left"},
+	{"path": "res://assets/l_arrows/arrow-up-3.png", "name": "arrow_up"},
+	{"path": "res://assets/L_arrows/arrow-down-3.png", "name": "arrow_down"}
+]
+
+var p_arrow_list = [
+	{"path": "res://assets/P_arrows/arrow-right-4.png", "name": "arrow_right"},
+	{"path": "res://assets/P_arrows/arrow-left-4.png", "name": "arrow_left"},
+	{"path": "res://assets/P_arrows/arrow-up-4.png", "name": "arrow_up"},
+	{"path": "res://assets/P_arrows/arrow-down-4.png", "name": "arrow_down"}
+]
+
 # Define a dictionary to map key codes to arrow names
 var key_to_arrow = {
 	KEY_UP: "arrow_up",
@@ -22,7 +43,8 @@ var hit = false
 var current_arrow_name = ""
 
 func _ready():
-	generate_random_arrows()
+	#generate_random_arrows()
+	pass
 
 # Determines which animation is played
 func set_animation(name):
@@ -36,10 +58,23 @@ func set_animation(name):
 		$AnimationPlayer.play("topDown4")
 
 # Generates random value from 4 different arrows
-func generate_random_arrows():
-	var random_arrow = arrow_list[randi_range(0, arrow_list.size() - 1)]
-	texture = load(random_arrow["path"])
-	current_arrow_name = random_arrow["name"]
+func generate_random_arrows(color):
+	if color == "yellow":
+		var random_arrow = arrow_list[randi_range(0, arrow_list.size() - 1)]
+		texture = load(random_arrow["path"])
+		current_arrow_name = random_arrow["name"]
+	elif color == "lime":
+		var random_arrow = l_arrow_list[randi_range(0, arrow_list.size() - 1)]
+		texture = load(random_arrow["path"])
+		current_arrow_name = random_arrow["name"]
+	elif color == "blue":
+		var random_arrow = b_arrow_list[randi_range(0, arrow_list.size() - 1)]
+		texture = load(random_arrow["path"])
+		current_arrow_name = random_arrow["name"]
+	elif color == "pink":
+		var random_arrow = p_arrow_list[randi_range(0, arrow_list.size() - 1)]
+		texture = load(random_arrow["path"])
+		current_arrow_name = random_arrow["name"]
 
 
 # Checks how accurate user input was
@@ -84,3 +119,4 @@ func _input(event):
 				elif area == "red":
 					$"/root/MainScene".print_feedback("Poor")
 					$"/root/MainScene".player_score(1)
+

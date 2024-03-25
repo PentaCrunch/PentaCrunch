@@ -1,13 +1,201 @@
-[gd_scene load_steps=3 format=3 uid="uid://bx0no8s34pqqc"]
+[gd_scene load_steps=20 format=3 uid="uid://bx0no8s34pqqc"]
 
-[ext_resource type="Texture2D" uid="uid://uhhuwcovpk61" path="res://assets/boss-sprite-placeholder.png" id="1_5fym5"]
 [ext_resource type="Script" path="res://boss.gd" id="1_oh3ya"]
+[ext_resource type="Texture2D" uid="uid://dxv7druw1dmn0" path="res://assets/boss/boss-angry-left.png" id="2_8pi64"]
+[ext_resource type="Texture2D" uid="uid://b4dw3ybqgcrij" path="res://assets/boss/boss-happy-left.png" id="2_h68n3"]
+[ext_resource type="Texture2D" uid="uid://btpyusuroudy3" path="res://assets/boss/boss-neutral-left.png" id="2_yhoqp"]
+[ext_resource type="Texture2D" uid="uid://d3k5lihwncs8u" path="res://assets/boss/boss-angry-middle.png" id="3_5mles"]
+[ext_resource type="Texture2D" uid="uid://7tq66x5ahtso" path="res://assets/boss/boss-happy-middle.png" id="3_d8368"]
+[ext_resource type="Texture2D" uid="uid://w8bawiwulmne" path="res://assets/boss/boss-neutral-midlle.png" id="3_jncne"]
+[ext_resource type="Texture2D" uid="uid://b0w686fg2b3dw" path="res://assets/boss/boss-happy-right.png" id="4_00p68"]
+[ext_resource type="Texture2D" uid="uid://jr46ci2ulibg" path="res://assets/boss/boss-neutral-right.png" id="4_hqi6n"]
+[ext_resource type="Texture2D" uid="uid://bidjqh0px1yvp" path="res://assets/boss/boss-angry-eight.png" id="4_oqqhl"]
+[ext_resource type="Texture2D" uid="uid://ds6nfl3w3phu5" path="res://assets/boss/boss-truck-grab.png" id="5_kpjvt"]
+[ext_resource type="Texture2D" uid="uid://b5f8qy4w6efv6" path="res://assets/boss/boss-stressed-left.png" id="11_sg4qj"]
+[ext_resource type="Texture2D" uid="uid://jyq48ub4hrry" path="res://assets/boss/boss-stressed-middle.png" id="12_ijahv"]
+[ext_resource type="Texture2D" uid="uid://6qf8ax0tcnqs" path="res://assets/boss/boss-stressed-right.png" id="13_n1pkh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bwepf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8pi64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5mles")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_oqqhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5mles")
+}],
+"loop": true,
+"name": &"angry",
+"speed": 2.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_kpjvt")
+}],
+"loop": true,
+"name": &"grab_truck",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_h68n3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d8368")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_00p68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d8368")
+}],
+"loop": true,
+"name": &"happy",
+"speed": 2.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yhoqp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jncne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hqi6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_jncne")
+}],
+"loop": true,
+"name": &"neutral",
+"speed": 2.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_sg4qj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ijahv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_n1pkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ijahv")
+}],
+"loop": true,
+"name": &"stressed",
+"speed": 2.5
+}]
+
+[sub_resource type="Animation" id="Animation_men0n"]
+resource_name = "drive_away"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.6, 0.6), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(10, 2.08165e-12), Vector2(340, -100)]
+}
+
+[sub_resource type="Animation" id="Animation_qef33"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(100, 2.08165e-12)]
+}
+
+[sub_resource type="Animation" id="Animation_caw25"]
+resource_name = "reverse"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.6, 0.6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(230, -75), Vector2(10, 2.08165e-12)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2xe5s"]
+_data = {
+"RESET": SubResource("Animation_qef33"),
+"drive_away": SubResource("Animation_men0n"),
+"reverse": SubResource("Animation_caw25")
+}
 
 [node name="Boss" type="Area2D"]
 script = ExtResource("1_oh3ya")
 
-[node name="Boss" type="Sprite2D" parent="."]
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("1_5fym5")
+[node name="Boss" type="AnimatedSprite2D" parent="."]
+position = Vector2(100, 2.08165e-12)
+scale = Vector2(1e-05, 1e-05)
+sprite_frames = SubResource("SpriteFrames_bwepf")
+animation = &"grab_truck"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Boss"]
+libraries = {
+"": SubResource("AnimationLibrary_2xe5s")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxl1muwx30636"
-path="res://.godot/imported/truck-1.png-f92e07fab8673328b0daf8f39a9778c8.ctex"
+uid="uid://7tq66x5ahtso"
+path="res://.godot/imported/boss-happy-middle.png-b40c8c899140a9c0e1c2a50961593f8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/truck-1.png"
-dest_files=["res://.godot/imported/truck-1.png-f92e07fab8673328b0daf8f39a9778c8.ctex"]
+source_file="res://assets/boss/boss-happy-middle.png"
+dest_files=["res://.godot/imported/boss-happy-middle.png-b40c8c899140a9c0e1c2a50961593f8f.ctex"]
 
 [params]
 

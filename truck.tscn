@@ -1,11 +1,173 @@
-[gd_scene load_steps=3 format=3 uid="uid://c83xt0ctyo2vf"]
+[gd_scene load_steps=12 format=3 uid="uid://c83xt0ctyo2vf"]
 
 [ext_resource type="Script" path="res://truck.gd" id="1_yq0q3"]
-[ext_resource type="Texture2D" uid="uid://ddh585wocg4y5" path="res://assets/truck-empty.png" id="2_g1t2n"]
+[ext_resource type="Texture2D" uid="uid://ddh585wocg4y5" path="res://assets/truck/truck-empty.png" id="2_g1t2n"]
+[ext_resource type="Texture2D" uid="uid://e5o7y08lvtw4" path="res://assets/truck/door.png" id="3_v4q2h"]
+
+[sub_resource type="Animation" id="Animation_qrr4v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.6, 0.6)]
+}
+
+[sub_resource type="Animation" id="Animation_kcwjc"]
+resource_name = "drive_away"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.6, 0.6), Vector2(1e-05, 1e-05)]
+}
+
+[sub_resource type="Animation" id="Animation_d5g3j"]
+resource_name = "peruutus"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(0.6, 0.6)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8xa3y"]
+_data = {
+"RESET": SubResource("Animation_qrr4v"),
+"drive_away": SubResource("Animation_kcwjc"),
+"reverse": SubResource("Animation_d5g3j")
+}
+
+[sub_resource type="Animation" id="Animation_tkh1t"]
+resource_name = "door_open"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5.00001, -105.792), Vector2(5.83331, -466.667)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.985243, 0.991678), Vector2(0.991753, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bxa50"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(8, -102.75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.02083, 1.01072)]
+}
+
+[sub_resource type="Animation" id="Animation_jqaka"]
+resource_name = "door_close"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5.833, -466.667), Vector2(5, -105.792)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.992, 1e-05), Vector2(0.992, 0.992)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_64of5"]
+_data = {
+"RESET": SubResource("Animation_bxa50"),
+"door_close": SubResource("Animation_jqaka"),
+"door_open": SubResource("Animation_tkh1t")
+}
 
 [node name="Truck" type="Area2D"]
 script = ExtResource("1_yq0q3")
 
 [node name="Truck" type="Sprite2D" parent="."]
+clip_children = 2
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_g1t2n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Truck"]
+libraries = {
+"": SubResource("AnimationLibrary_8xa3y")
+}
+
+[node name="Door" type="Sprite2D" parent="Truck"]
+clip_children = 1
+position = Vector2(8, -102.75)
+scale = Vector2(1.02083, 1.01072)
+texture = ExtResource("3_v4q2h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Truck/Door"]
+libraries = {
+"": SubResource("AnimationLibrary_64of5")
+}
