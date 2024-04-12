@@ -2,10 +2,37 @@ extends Sprite2D
 
 # Arrow pictures and names
 var arrow_list = [
-	{"path": "res://assets/arrow-right.png", "name": "arrow_right"},
+	{"path": "res://assets/arrow-rightv2.png", "name": "arrow_right"},
 	{"path": "res://assets/arrow-left.png", "name": "arrow_left"},
 	{"path": "res://assets/arrow-up.png", "name": "arrow_up"},
 	{"path": "res://assets/arrow-down.png", "name": "arrow_down"}
+]
+var o_arrow_list = [
+	{"path": "res://assets/O_arrows/arrow_right-1.png", "name": "arrow_right"},
+	{"path": "res://assets/O_arrows/arrow_left-2.png", "name": "arrow_left"},
+	{"path": "res://assets/O_arrows/arrow_up-2.png", "name": "arrow_up"},
+	{"path": "res://assets/O_arrows/arrow_down-2.png", "name": "arrow_down"}
+]
+
+var b_arrow_list = [
+	{"path": "res://assets/B_arrows/arrow_right-2.png", "name": "arrow_right"},
+	{"path": "res://assets/B_arrows/arrow_left-2.png", "name": "arrow_left"},
+	{"path": "res://assets/B_arrows/arrow_up-2.png", "name": "arrow_up"},
+	{"path": "res://assets/B_arrows/arrow_down-2.png", "name": "arrow_down"}
+]
+
+var l_arrow_list = [
+	{"path": "res://assets/L_arrows/arrow_right-3.png", "name": "arrow_right"},
+	{"path": "res://assets/L_arrows/arrow_left-3.png", "name": "arrow_left"},
+	{"path": "res://assets/l_arrows/arrow_up-3.png", "name": "arrow_up"},
+	{"path": "res://assets/L_arrows/arrow_down-3.png", "name": "arrow_down"}
+]
+
+var p_arrow_list = [
+	{"path": "res://assets/P_arrows/arrow_right-4.png", "name": "arrow_right"},
+	{"path": "res://assets/P_arrows/arrow_left-4.png", "name": "arrow_left"},
+	{"path": "res://assets/P_arrows/arrow_up-4.png", "name": "arrow_up"},
+	{"path": "res://assets/P_arrows/arrow_down-4.png", "name": "arrow_down"}
 ]
 
 # Define a dictionary to map key codes to arrow names
@@ -22,7 +49,8 @@ var hit = false
 var current_arrow_name = ""
 
 func _ready():
-	generate_random_arrows()
+	#generate_random_arrows()
+	pass
 
 # Determines which animation is played
 func set_animation(name):
@@ -36,10 +64,23 @@ func set_animation(name):
 		$AnimationPlayer.play("topDown4")
 
 # Generates random value from 4 different arrows
-func generate_random_arrows():
-	var random_arrow = arrow_list[randi_range(0, arrow_list.size() - 1)]
-	texture = load(random_arrow["path"])
-	current_arrow_name = random_arrow["name"]
+func generate_random_arrows(color):
+	if color == "yellow":
+		var random_arrow = arrow_list[randi_range(0, arrow_list.size() - 1)]
+		texture = load(random_arrow["path"])
+		current_arrow_name = random_arrow["name"]
+	elif color == "lime":
+		var random_arrow = l_arrow_list[randi_range(0, arrow_list.size() - 1)]
+		texture = load(random_arrow["path"])
+		current_arrow_name = random_arrow["name"]
+	elif color == "blue":
+		var random_arrow = b_arrow_list[randi_range(0, arrow_list.size() - 1)]
+		texture = load(random_arrow["path"])
+		current_arrow_name = random_arrow["name"]
+	elif color == "pink":
+		var random_arrow = p_arrow_list[randi_range(0, arrow_list.size() - 1)]
+		texture = load(random_arrow["path"])
+		current_arrow_name = random_arrow["name"]
 
 
 # Checks how accurate user input was
@@ -84,3 +125,8 @@ func _input(event):
 				elif area == "red":
 					$"/root/MainScene".print_feedback("Poor")
 					$"/root/MainScene".player_score(1)
+			else:
+				hit = true
+				print("miss")
+				$"/root/MainScene".print_feedback("Miss")
+

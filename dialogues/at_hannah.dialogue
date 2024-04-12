@@ -1,0 +1,18 @@
+~ start
+
+Boss: Here we are. Time for your first gig. This shouldn't be too difficult.
+Boss: Our client is a college student, so she probably doesn’t have too much furniture in that dorm.
+Boss: We all know how stressful studying can be, so I have made an EXTRA CHILL beat for her during her move out. [do emit("knock")]
+
+Boss: Hello Miss? We’re here from Beat-Box moving services!
+
+Hannah: Oh hey! Just on time! I just finished putting my last books in boxes. It's been such a long day already!
+
+Boss: Don’t worry, my team can take it from here. You can just chill out and RELAX.
+
+Hannah: Thats good to hear! This term has been rough, but I finally managed to hand in my thesis. Now I get to go home and visit my family. I haven’t seen them in sooo long. 
+Hannah: Just let me know if you need anything!
+
+Boss: Let's get started! [do emit("dialogue_over")]
+
+=> END

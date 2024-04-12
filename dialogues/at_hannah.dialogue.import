@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bc3nisu6ud6qj"
+path="res://.godot/imported/at_hannah.dialogue-68e443ee1046fae46a7b6758e250576a.tres"
+
+[deps]
+
+source_file="res://dialogues/at_hannah.dialogue"
+dest_files=["res://.godot/imported/at_hannah.dialogue-68e443ee1046fae46a7b6758e250576a.tres"]
+
+[params]
+
+defaults=true

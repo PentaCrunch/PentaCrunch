@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bh8feye0clra"
+path="res://.godot/imported/lofi_dialog.dialogue-da5e5016afb9f485bde87707ff488b09.tres"
+
+[deps]
+
+source_file="res://dialogues/lofi_dialog.dialogue"
+dest_files=["res://.godot/imported/lofi_dialog.dialogue-da5e5016afb9f485bde87707ff488b09.tres"]
+
+[params]
+
+defaults=true
