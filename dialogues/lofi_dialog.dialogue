@@ -1,0 +1,17 @@
+~ start
+
+Lofigirl: Hello there!
+
+Boss: You need help in moving?
+
+Lofigirl: Yes! Can you help me?
+- Start moving
+	set moving_status = true
+	Boss: Of course!
+	Lofigirl: <3
+- Not right now
+	set moving_status = false
+	Boss: Sorry we are fully booked rn.
+	Lofigirl: Thats sad.
+
+=> END 

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2rgd6qq436dr"]
+
+[sub_resource type="GDScript" id="GDScript_wtjr7"]
+script/source = "extends Node2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	DialogueManager.show_dialogue_balloon(load(\"res://dialogue/lofi_girl_1.dialogue\"), \"start\")
+ 
+"
+
+[node name="Test" type="Node2D"]
+script = SubResource("GDScript_wtjr7")

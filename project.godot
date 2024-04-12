@@ -11,15 +11,33 @@ config_version=5
 [application]
 
 config/name="CouchGame"
-run/main_scene="res://main_scene.tscn"
+run/main_scene="res://landing_page.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+State="*res://state.gd"
+
+[dialogue_manager]
+
+general/states=["State"]
+general/balloon_path="res:///balloon.tscn"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://dialogues/lofi_dialog.dialogue", "res://dialogues/at_hannah.dialogue", "res://dialogues/first_scene.dialogue", "res://dialogues/at_arttu.dialogue")
 
 [rendering]
 

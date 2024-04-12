@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bi3f2778mkjk6"
+path="res://.godot/imported/truck driving away.mp3-a255db7eadc841917dde985c3baf9520.mp3str"
+
+[deps]
+
+source_file="res://sounds/truck driving away.mp3"
+dest_files=["res://.godot/imported/truck driving away.mp3-a255db7eadc841917dde985c3baf9520.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -126,7 +126,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grwp5"]
-size = Vector2(274.313, 108.75)
+size = Vector2(43.8231, 54.375)
 
 [node name="Arrow" type="Sprite2D"]
 position = Vector2(-92, 2.08165e-12)
@@ -142,4 +142,5 @@ libraries = {
 [node name="ArrowArea2D" type="Area2D" parent="."]
 
 [node name="ArrowCollisionShape" type="CollisionShape2D" parent="ArrowArea2D"]
+position = Vector2(2.08165e-12, 2.08165e-12)
 shape = SubResource("RectangleShape2D_grwp5")

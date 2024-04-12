@@ -78,6 +78,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("3_jncne")
+}],
+"loop": true,
+"name": &"still",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("11_sg4qj")
 }, {
 "duration": 1.0,
@@ -93,6 +101,33 @@ animations = [{
 "name": &"stressed",
 "speed": 2.5
 }]
+
+[sub_resource type="Animation" id="Animation_qef33"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(100, 2.08165e-12)]
+}
 
 [sub_resource type="Animation" id="Animation_men0n"]
 resource_name = "drive_away"
@@ -120,33 +155,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(10, 2.08165e-12), Vector2(340, -100)]
-}
-
-[sub_resource type="Animation" id="Animation_qef33"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1e-05, 1e-05)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(100, 2.08165e-12)]
 }
 
 [sub_resource type="Animation" id="Animation_caw25"]
@@ -191,7 +199,7 @@ script = ExtResource("1_oh3ya")
 position = Vector2(100, 2.08165e-12)
 scale = Vector2(1e-05, 1e-05)
 sprite_frames = SubResource("SpriteFrames_bwepf")
-animation = &"grab_truck"
+animation = &"neutral"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Boss"]
 libraries = {

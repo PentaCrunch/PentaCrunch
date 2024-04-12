@@ -1,0 +1,24 @@
+~ start
+
+Boss: This is the place. Let's get the truck set up and start loading. 
+
+Arttu: Yoo, thanks for coming. I would’ve made the move myself, but my brother’s van broke down. 
+Arttu: I’m going touring next week so I really needed to get this sorted out soon. 
+Arttu: I’m not used to having others do the work for me. 
+
+Boss: Don’t worry, we’ll be careful with your things. 
+
+Arttu: What do you think? Do you prefer doing things yourself or having others do it? 
+- Others do it
+	Player: Not having to work is sweet, I'd rather others do the busywork.
+	Arttu: I guess that makes sense, can’t hurt to rely on others sometimes.
+- Doing myself
+	Player:  I do things myself, pre-made solutions rarely reflect what I need. 
+	Arttu: That’s what I’m talking about! Don’t buy what they’re selling, make your own! 
+
+Arttu: Anyways, I'll go back to sewing this patch on my denim jacket. 
+Arttu: Let me know if you need anything. Hope you can move everything to my tempo. 
+
+Boss: Oh, you bet. Are you ready? Rock on!
+
+=> END

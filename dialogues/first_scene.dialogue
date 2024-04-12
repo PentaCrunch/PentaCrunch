@@ -1,0 +1,14 @@
+~ start
+
+Player: Paying this month's rent took out the last of my savings. I need to find a job soon or I will get kicked out by the end of the month. 
+Player: I hope I can find something in the paper.
+Player: What's this... “Beat Box Moving Services!... Moving to the Beat of your life!”, it says they are now hiring, I guess I should give it a shot. 
+
+Boss: Welcome to Beat Box, new hires! We are here to do one thing and one thing only!
+Boss: To take away the stress of people having to move by providing a magical musical experience to the tune of their HEARTS!
+Boss: Each one of us has a melody within us and it is MY LIFES CALLING to play to it. 
+Boss: So, here’s the deal. When we visit a new client, it is of UTMOST IMPORTANCE that your movements are synchronized to the song I've composed.
+Boss: That is the promise that we make. I want you packing and wrapping and loading on the beat, do you understand?
+Boss: ...Great! Lets make some music then. [do emit("dialogue0_over")]
+
+=> END

@@ -1,0 +1,117 @@
+[gd_scene load_steps=8 format=3 uid="uid://jhr7c8f3brcf"]
+
+[ext_resource type="Script" path="res://main_menu.gd" id="1_vj3rr"]
+[ext_resource type="Texture2D" uid="uid://bf3sa0wwdrlyg" path="res://assets/tablet/clipboard.png" id="2_dyde5"]
+[ext_resource type="FontFile" uid="uid://eruo762gv2v7" path="res://assets/fonts/Greattool-51Zoj.otf" id="3_j67he"]
+[ext_resource type="Texture2D" uid="uid://eydkitjv0ovp" path="res://characters/Hannah.png" id="4_emcyw"]
+[ext_resource type="Texture2D" uid="uid://cnfwietvpci1l" path="res://characters/Arttu.png" id="5_nird1"]
+
+[sub_resource type="Gradient" id="Gradient_4jamo"]
+offsets = PackedFloat32Array(0.02, 0.585, 1)
+colors = PackedColorArray(0.368399, 0.761045, 0, 1, 0.4, 0.647059, 0.858824, 1, 1, 1, 0.862745, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_511xt"]
+gradient = SubResource("Gradient_4jamo")
+fill_from = Vector2(0.487805, 0.981707)
+fill_to = Vector2(0.780488, 0)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vj3rr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_511xt")
+
+[node name="Tablet" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = 24.0
+offset_right = 1888.0
+offset_bottom = 1820.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("2_dyde5")
+
+[node name="HannahBtn" type="Button" parent="Tablet"]
+layout_mode = 0
+offset_left = 1771.0
+offset_top = 734.0
+offset_right = 2034.0
+offset_bottom = 864.0
+theme_override_fonts/font = ExtResource("3_j67he")
+theme_override_font_sizes/font_size = 60
+text = "Start
+Level 1
+"
+
+[node name="ArttuBtn" type="Button" parent="Tablet"]
+layout_mode = 0
+offset_left = 1780.0
+offset_top = 1360.0
+offset_right = 2049.0
+offset_bottom = 1497.0
+theme_override_fonts/font = ExtResource("3_j67he")
+theme_override_font_sizes/font_size = 60
+text = "Start 
+Level 2
+"
+
+[node name="HannahLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 794.0
+offset_top = 281.0
+offset_right = 1105.0
+offset_bottom = 411.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_j67he")
+theme_override_font_sizes/font_size = 22
+text = "Hannah Liu, 23 
+Occupation: College Student 
+Likes: cozy sweaters, fantasy novels, cats 
+Music Taste: Lo-fi, Chillhop, indie 
+Difficulty: Easy "
+
+[node name="ArttuLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 797.0
+offset_top = 496.0
+offset_right = 1161.0
+offset_bottom = 626.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_j67he")
+theme_override_font_sizes/font_size = 22
+text = "Arttu Korhonen, 29 
+Occupation: Performer 
+Likes: Rocking out, DIY, Zines, Social Organizing 
+Music Taste: Punk, Grunge, Metal 
+Difficulty: Medium "
+
+[node name="Hannah" type="Sprite2D" parent="."]
+position = Vector2(704, 349)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("4_emcyw")
+
+[node name="Arttu" type="Sprite2D" parent="."]
+position = Vector2(703, 559)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("5_nird1")
+
+[connection signal="pressed" from="Tablet/HannahBtn" to="." method="_on_lofi_btn_pressed"]
+[connection signal="pressed" from="Tablet/ArttuBtn" to="." method="_on_arttu_btn_pressed"]

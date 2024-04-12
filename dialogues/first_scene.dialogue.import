@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_11"
+type="Resource"
+uid="uid://bnu7j446ofuhg"
+path="res://.godot/imported/first_scene.dialogue-509067a01c538def41b8c8130c9b3ea6.tres"
+
+[deps]
+
+source_file="res://dialogues/first_scene.dialogue"
+dest_files=["res://.godot/imported/first_scene.dialogue-509067a01c538def41b8c8130c9b3ea6.tres"]
+
+[params]
+
+defaults=true

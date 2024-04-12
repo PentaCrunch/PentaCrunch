@@ -2,31 +2,37 @@ extends Sprite2D
 
 # Arrow pictures and names
 var arrow_list = [
-	{"path": "res://assets/arrow-right.png", "name": "arrow_right"},
+	{"path": "res://assets/arrow-rightv2.png", "name": "arrow_right"},
 	{"path": "res://assets/arrow-left.png", "name": "arrow_left"},
 	{"path": "res://assets/arrow-up.png", "name": "arrow_up"},
 	{"path": "res://assets/arrow-down.png", "name": "arrow_down"}
 ]
+var o_arrow_list = [
+	{"path": "res://assets/O_arrows/arrow_right-1.png", "name": "arrow_right"},
+	{"path": "res://assets/O_arrows/arrow_left-2.png", "name": "arrow_left"},
+	{"path": "res://assets/O_arrows/arrow_up-2.png", "name": "arrow_up"},
+	{"path": "res://assets/O_arrows/arrow_down-2.png", "name": "arrow_down"}
+]
 
 var b_arrow_list = [
-	{"path": "res://assets/B_arrows/arrow-right-2.png", "name": "arrow_right"},
-	{"path": "res://assets/B_arrows/arrow-left-2.png", "name": "arrow_left"},
-	{"path": "res://assets/B_arrows/arrow-up-2.png", "name": "arrow_up"},
-	{"path": "res://assets/B_arrows/arrow-down-2.png", "name": "arrow_down"}
+	{"path": "res://assets/B_arrows/arrow_right-2.png", "name": "arrow_right"},
+	{"path": "res://assets/B_arrows/arrow_left-2.png", "name": "arrow_left"},
+	{"path": "res://assets/B_arrows/arrow_up-2.png", "name": "arrow_up"},
+	{"path": "res://assets/B_arrows/arrow_down-2.png", "name": "arrow_down"}
 ]
 
 var l_arrow_list = [
-	{"path": "res://assets/L_arrows/arrow-right-3.png", "name": "arrow_right"},
-	{"path": "res://assets/L_arrows/arrow-left-3.png", "name": "arrow_left"},
-	{"path": "res://assets/l_arrows/arrow-up-3.png", "name": "arrow_up"},
-	{"path": "res://assets/L_arrows/arrow-down-3.png", "name": "arrow_down"}
+	{"path": "res://assets/L_arrows/arrow_right-3.png", "name": "arrow_right"},
+	{"path": "res://assets/L_arrows/arrow_left-3.png", "name": "arrow_left"},
+	{"path": "res://assets/l_arrows/arrow_up-3.png", "name": "arrow_up"},
+	{"path": "res://assets/L_arrows/arrow_down-3.png", "name": "arrow_down"}
 ]
 
 var p_arrow_list = [
-	{"path": "res://assets/P_arrows/arrow-right-4.png", "name": "arrow_right"},
-	{"path": "res://assets/P_arrows/arrow-left-4.png", "name": "arrow_left"},
-	{"path": "res://assets/P_arrows/arrow-up-4.png", "name": "arrow_up"},
-	{"path": "res://assets/P_arrows/arrow-down-4.png", "name": "arrow_down"}
+	{"path": "res://assets/P_arrows/arrow_right-4.png", "name": "arrow_right"},
+	{"path": "res://assets/P_arrows/arrow_left-4.png", "name": "arrow_left"},
+	{"path": "res://assets/P_arrows/arrow_up-4.png", "name": "arrow_up"},
+	{"path": "res://assets/P_arrows/arrow_down-4.png", "name": "arrow_down"}
 ]
 
 # Define a dictionary to map key codes to arrow names
@@ -119,4 +125,8 @@ func _input(event):
 				elif area == "red":
 					$"/root/MainScene".print_feedback("Poor")
 					$"/root/MainScene".player_score(1)
+			else:
+				hit = true
+				print("miss")
+				$"/root/MainScene".print_feedback("Miss")
 

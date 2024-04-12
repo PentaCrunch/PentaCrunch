@@ -1,0 +1,109 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxshvsljh17pk"]
+
+[ext_resource type="Script" path="res://landing_page.gd" id="1_7ddcs"]
+[ext_resource type="Texture2D" uid="uid://b50jbf5i7dd3y" path="res://assets/bg/background-v1.png" id="2_unmif"]
+[ext_resource type="FontFile" uid="uid://bobab63yfochu" path="res://assets/fonts/CartoonFun-rg0zO.ttf" id="3_kxp7x"]
+[ext_resource type="Texture2D" uid="uid://cdw71anyh836n" path="res://assets/lofi_girl/lofigirl.png" id="4_vxf3l"]
+[ext_resource type="Texture2D" uid="uid://w8bawiwulmne" path="res://assets/boss/boss-neutral-midlle.png" id="5_0ef2n"]
+[ext_resource type="Texture2D" uid="uid://cu4rs3od71chy" path="res://assets/truck/v2truck-3.png" id="6_nnl46"]
+[ext_resource type="Texture2D" uid="uid://d0fvaqwu08g7i" path="res://arttu/punk-sprite.png" id="7_cvmob"]
+
+[node name="LandingPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7ddcs")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_unmif")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.5
+offset_top = -94.0
+offset_right = 150.5
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StartBtn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_kxp7x")
+theme_override_font_sizes/font_size = 25
+text = "Start Game"
+
+[node name="GuideBtn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_kxp7x")
+theme_override_font_sizes/font_size = 25
+text = "Guide"
+
+[node name="QuitBtn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_kxp7x")
+theme_override_font_sizes/font_size = 25
+text = "Quit"
+
+[node name="GameNameLabel" type="Label" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -388.0
+offset_right = 398.0
+offset_bottom = -161.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.929412, 0, 0.12549, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("3_kxp7x")
+theme_override_font_sizes/font_size = 140
+text = "Beat Box"
+
+[node name="Lofigirl" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1368, 736)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("4_vxf3l")
+
+[node name="Boss-neutral-midlle" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1568, 608)
+texture = ExtResource("5_0ef2n")
+
+[node name="V2Truck-3" type="Sprite2D" parent="."]
+position = Vector2(248, 752)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("6_nnl46")
+
+[node name="Punk-sprite" type="Sprite2D" parent="."]
+position = Vector2(1792, 760)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_cvmob")
+
+[connection signal="pressed" from="VBoxContainer/StartBtn" to="." method="_on_start_btn_pressed"]
